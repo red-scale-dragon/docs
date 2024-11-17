@@ -1,6 +1,6 @@
 site_name: Dragon Framework Docs
 theme:
-  name: dragon-framework-docs
+  name: readthedocs
   highlightjs: true
 plugins:
   - search
