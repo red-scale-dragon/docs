@@ -7,8 +7,7 @@ Helpers include a list of functions and full classes that help you simplify your
 
 ## Functions
 
-`nonce()`
-----------
+### `nonce()`
 
 `nonce()`
 
@@ -24,15 +23,13 @@ Example Output:
 <p><input name="dragonfw_dragonapp_nonce" value="d7cccc2187" type="hidden" /></p>
 ```
 
-`send_cookie(\Symfony\Component\HttpFoundation\Cookie $cookie)`
-----------
+### `send_cookie()`
 
-`send_cookie($cookie)`
+`send_cookie(\Symfony\Component\HttpFoundation\Cookie $cookie)`
 
 This will queue a cookie created with Symfony's Cookie object to be sent to the browser. Unlike `setcookie()` from PHP, this will take the cookie object from the Request, even one virtualized by Dragon Framework, and send that to the browser.
 
-`image()`
-----------
+### `image()`
 
 `image(string $filename)`
 
@@ -48,15 +45,14 @@ Example Output:
 <p><img src="/wp-content/plugins/dragonapp/resources/assets/img/dragon.png" /></p>
 ```
 
-`css()`
-----------
+### `css()`
 
 `css(string $filename)`
 
 Displays the URL for the CSS file specified in `$filename` located in the resources/assets/css directory, either in your app or if that doesn't exist, then the one in the framework.
 
-`js()`
-----------
+### `js()`
+
 
 `js(string $filename)`
 
@@ -66,124 +62,113 @@ Displays the URL for the JS file specified in `$filename` located in the resourc
 
 Dragon Framework comes with Eloquent ORM models for each of the default WordPress tables. These are their methods.
 
-`Dragon\Database\Models\Comment`
------------------------------------
+### `Dragon\Database\Models\Comment`
 
-### `parent()`
+#### `parent()`
 
 `public function parent() : HasOne`
 
 Access the parent comment (if any).
 
-### `user()`
+#### `user()`
 
 `public function user() : HasOne`
 
 Access the user that wrote the comment.
 
-### `post()`
+#### `post()`
 
 `public function post() : HasOne`
 
 Access the post on which the comment was left.
 
-`Dragon\Database\Models\CommentMeta`
------------------------------------
+### `Dragon\Database\Models\CommentMeta`
 
-### `comment()`
+#### `comment()`
 
 `public function comment() : HasOne`
 
 Access the parent comment for which this meta data belongs.
 
-`Dragon\Database\Models\Link`
------------------------------------
+### `Dragon\Database\Models\Link`
 
-### `owner()`
+#### `owner()`
 
 `public function owner() : HasOne`
 
 Access the link owner/user.
 
-`Dragon\Database\Models\Option`
------------------------------------
+### `Dragon\Database\Models\Option`
 
 No extra methods.
 
-`Dragon\Database\Models\Post`
------------------------------------
+### `Dragon\Database\Models\Post`
 
-### `author()`
+#### `author()`
 
 `public function author() : HasOne`
 
 Access the post author.
 
-### `parent()`
+#### `parent()`
 
 `public function parent() : HasOne`
 
 Access the parent post.
 
-### `taxonomies()`
+#### `taxonomies()`
 
 `public function taxonomies() : BelongsToMany`
 
 Access the list of taxonomies assigned to this post. (Done through the `Dragon\Database\Models\TermRelationship` Pivot table.)
 
-`Dragon\Database\Models\PostMeta`
------------------------------------
+### `Dragon\Database\Models\PostMeta`
 
-### `post()`
+#### `post()`
 
 `public function post() : HasOne`
 
 Access the post to which this meta data belongs.
 
-`Dragon\Database\Models\Term`
------------------------------------
+### `Dragon\Database\Models\Term`
 
 No extra methods.
 
-`Dragon\Database\Models\TermMeta`
------------------------------------
+### `Dragon\Database\Models\TermMeta`
 
-### `post()`
+#### `post()`
 
 `public function term() : HasOne`
 
 Access the term on which this meta data belongs.
 
-`Dragon\Database\Models\TermTaxonomy`
------------------------------------
+### `Dragon\Database\Models\TermTaxonomy`
 
-### `term()`
+#### `term()`
 
 `public function term() : HasOne`
 
 Access the term for the taxonomy.
 
-### `parent()`
+#### `parent()`
 
 `public function parent() : HasOne`
 
 Access the parent taxonomy.
 
-### `posts()`
+#### `posts()`
 
 `public function posts() : BelongsToMany`
 
 Access the posts associated with this taxonomy. (Done through the `Dragon\Database\Models\TermRelationship` Pivot table.)
 
-`Dragon\Database\Models\User`
------------------------------------
+### `Dragon\Database\Models\User`
 
 No extra methods.
 
-`Dragon\Database\Models\UserMeta`
------------------------------------
+### `Dragon\Database\Models\UserMeta`
 
-### `user()`
+#### `user()`
 
 `public function user() : HasOne`
 
@@ -191,58 +176,55 @@ Access the user to whom this meta data belongs.
 
 ## Classes and Objects
 
-`Dragon\Admin\Notice`
------------------------------------
+### `Dragon\Admin\Notice`
 
-### `error()`
+#### `error()`
 
 `public static function error(string $message)`
 
 This will queue an error (red) admin notice using the WordPress function `wp_admin_notice`.
 
-### `success()`
+#### `success()`
 
 `public static function success(string $message)`
 
 This will queue a success (green) admin notice using the WordPress function `wp_admin_notice`.
 
-### `makeNotice()`
+#### `makeNotice()`
 
 `public static function makeNotice(string $type, string $message)`
 
 This will queue a notice of type `$type` which displays `$message` to the admin user.
 
-`Dragon\Assets\Asset`
------------------------------------
+### `Dragon\Assets\Asset`
 
-### `dir()`
+#### `dir()`
 
 `public static function dir(string $extra = "") : ?string`
 
 This will return the html-ready directory for an item in `resources/assets` when `$extra` contains a valid filename or path. If `$extra` is empty, then it will return the path to `resources/assets`. First the method will look for the file in your `app/resources/assets` directory, and if it doesn't exist, it will look for it in the Dragon Framework directory.
 
-`Dragon\Core\Config`
------------------------------------
+### `Dragon\Core\Config`
 
-### `getBaseDir()`
+#### `getBaseDir()`
 
 `public static function getBaseDir() : string`
 
 Get the full path to your plugin directory. (Ex. `/var/www/wordpress/wp-contents/plugins/dragonapp` and no trailing `/`)
 
-### `getPluginDirName()`
+#### `getPluginDirName()`
 
 `public static function getPluginDirName() : string`
 
 Get the name of the directory in which your plugin resides. (Ex. `dragonapp`)
 
-### `getLoaderFilename()`
+#### `getLoaderFilename()`
 
 `public static function getLoaderFilename() : string`
 
 Get the name of the file that loaded the dragon framework. (Ex. `/var/www/wordpress/wp-contents/plugins/dragonapp/loader.php`)
 
-### `prefix()`
+#### `prefix()`
 
 `public static function prefix() : string`
 
@@ -251,60 +233,57 @@ Get the prefix used for namespacing.
 !!! note
     `prefix()` does not accept a parameter. If you need to namespace a key manually, use `\Dragon\Support\Util::namespaced()`.
     
-### `get()`
+#### `get()`
 
 `public static function get(string $key, $default = null)`
 
 While `config($path)` is the preferred way to load config files, sometimes you might need to load a file when the application hasn't finished loading. This method will load your config file for you from `app/config`.
 
-`Dragon\Database\Option`
------------------------------------
+### `Dragon\Database\Option`
 
 A wrapper class to handle namespaced `get_option` `update_option` and `delete_option`.
 
-### `get()`
+#### `get()`
 
 `public static function get(string $key, $default = null)`
 
 Get the namespaced `$key` value through `get_option` or return the default.
 
-### `set()`
+#### `set()`
 
 `public static function set(string $key, $value)`
 
 Set the `$value` to the namespaced `$key` using `update_option`.
 
-### `delete()`
+#### `delete()`
 
 `public static function delete(string $key)`
 
 Delete the option using the namespaced `$key` through `delete_option`.
 
-`Dragon\Posts\Post`
------------------------------------
+### `Dragon\Posts\Post`
 
-### `getContent()`
+#### `getContent()`
 
 `public static function getContent($postId) : string`
 
 Gets the post content. This is a wrapper for `get_post()->post_content` and so it will accept the following for `$postId`: `int`, `WP_Post`, `null`.
 
-### `setPostMeta()`
+#### `setPostMeta()`
 
 `public static function setPostMeta(int $postId, string $key, $value)`
 
 Sets the post meta. This is a wrapper for `update_post_meta()`.
 
-### `getPostMeta()`
+#### `getPostMeta()`
 
 `public static function getPostMeta(int $postId, string $key, $default = null)`
 
 Gets the post meta, or returns a `$default`. Relies on `get_post_meta()`.
 
-`Dragon\Support\Bot`
------------------------------------
+### `Dragon\Support\Bot`
 
-### `isBot()`
+#### `isBot()`
 
 `public static function isBot($userAgent = null)`
 
@@ -313,261 +292,255 @@ Extremely basic bot detection method that simply checks `$userAgent` against a l
 !!! danger
     This is extremely basic and will most likely fail for security. Do not use this as your only source of bot protection. It's meant as a rudimentary way to check for bots so you can show different content, for instance. (Ex. Show text that's highly optimized for bots, but that humans won't want to look at visually.)
 
-`Dragon\Support\Csv`
------------------------------------
+### `Dragon\Support\Csv`
 
 Rudimentary tooling for working with CSV files.
 
-### `__construct()`
+#### `__construct()`
 
 `public function __construct(?string $filename = null)`
 
 If you pass a CSV filename to the constructor, it'll parse the file for you and set the `public $headers = [];` and `public $rows = [];` properties for you. You can always set them later if you prefer, so that you can call `download()`.
 
-### `isCsv()`
+#### `isCsv()`
 
 `public function isCsv() : bool`
 
 Checks the mime type of the filename passed to the contructor if you chose to pass it. If it's one of the known CSV mime types, then it'll return `true`, otherwise `false`.
 
-### `download()`
+#### `download()`
 
 `public function download(string $filename)`
 
 Push the CSV file to the browser using the filename `$filename` as the default filename the filename save box will use as the filename. (Ahem... I need coffee... :) )
 
-`Dragon\Support\Image`
------------------------------------
+### `Dragon\Support\Image`
 
-### `getMediaImageUrlById()`
+#### `getMediaImageUrlById()`
 
 `public static function getMediaImageUrlById(int $id, $size = "thumbnail") : ?string`
 
 Returns the URL to the media gallary image for the specified attachment `$id`, and WordPress-defined `$size`.
 
-### `getPathForMediaImageById()`
+#### `getPathForMediaImageById()`
 
 `public static function getPathForMediaImageById(int $id) : ?string`
 
 Returns the HTML-ready image path for the attachment with ID `$id`. (Wrapper for `wp_get_original_image_path()`)
 
-`Dragon\Support\Plugin`
------------------------------------
+### `Dragon\Support\Plugin`
 
-### `getData()`
+#### `getData()`
 
 `public static function getData() : ?string`
 
 Returns the metadata specified in the plugin's loader file. (That's the stuff written in the multiline comment / docblock.) It's just raw text without the comment stars and whatnot. However, if it's malformed, the method will return `null`.
 
-`Dragon\Support\Url`
------------------------------------
+### `Dragon\Support\Url`
 
-### `isRestRequest()`
+#### `isRestRequest()`
 
 `public static function isRestRequest() : bool`
 
 Returns the value of `REST_REQUEST` or `false` if it's not defined.
 
-### `isUrl()`
+#### `isUrl()`
 
 `public static function isUrl(string $text, string $protocolStartsWith = 'http') : bool`
 
 Checks if the contents of `$text` is a URL by seeing if it starts with `$protocolStartsWith`.
 
-### `getBySlug()`
+#### `getBySlug()`
 
 `public static function getBySlug(string $page, array $additionalQuery = []) : string`
 
 Get the URL of a WordPress page identified by the `$page` slug. You can add extra query parameters with `$additionalQuery` by setting it to a key-value pair of query parameters.
 
-### `getProductBySlug()`
+#### `getProductBySlug()`
 
 `public static function getProductBySlug(string $page) : ?string`
 
 Get the URL of a WooCommerce product identified by the `$page` slug.
 
-### `getAdminMenuLink()`
+#### `getAdminMenuLink()`
 
 `public static function getAdminMenuLink($slug, array $additionalQuery = []) : string`
 
 Get the URL of a WP Admin page by passing the page `$slug`. You can add extra query parameters with `$additionalQuery` by setting it to a key-value pair of query parameters.
 
-### `getCurrentUrl()`
+#### `getCurrentUrl()`
 
 `public static function getCurrentUrl(array $appendedQuery = []) : string`
 
 Get the URL of the current page. You can add extra query parameters with `$additionalQuery` by setting it to a key-value pair of query parameters.
 
-`Dragon\Support\User`
------------------------------------
+### `Dragon\Support\User`
 
-### `isLoggedIn()`
+#### `isLoggedIn()`
 
 `public static function isLoggedIn() : bool`
 
 Returns `true` for logged in, or `false` for not logged in.
 
-### `get()`
+#### `get()`
 
 `public static function get(?int $userId = null)`
 
 Returns the `WP_User` object for the user specified by `$userId` or if no `$userId` is passed, then it'll be a `WP_User` object for the current user.
 
-### `logout()`
+#### `logout()`
 
 `public static function logout()`
 
 Logs the user out, and returns them to the `wp_login_url()`.
 
-### `getUserId()`
+#### `getUserId()`
 
 `public static function getUserId() : int`
 
 Gets the user ID for the current user. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `getUserEmail()`
+#### `getUserEmail()`
 
 `public static function getUserEmail(?int $userId = null) : string`
 
 Gets the email for the user specified by `$userId` or the current user if not passed. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `getUsername()`
+#### `getUsername()`
 
 `public static function getUsername(?int $userId = null) : string`
 
 Gets the username for the user specified by `$userId` or the current user if not passed. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `isAdmin()`
+#### `isAdmin()`
 
 `public static function isAdmin(?int $userId = null) : bool`
 
 Checks if the user specified by `$userId` (or the current user if not passed) has the `administrator` role. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `can()`
+#### `can()`
 
 `public static function can(string $capability, ?int $userId = null) : bool`
 
 Checks if the user specified by `$userId` (or the current user if not passed) has the given `$capability` assigned to them. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `getRole()`
+#### `getRole()`
 
 `public static function getRole(?int $userId = null) : ?string`
 
 Gets the first role assigned to the user specified by `$userId` or the current user if not passed. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `hasRole()`
+#### `hasRole()`
 
 `public static function hasRole(string $role, ?int $userId = null) : bool`
 
 Checks if the user specified by `$userId` (or the current user if not passed) has the given `$role` assigned to them. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `setRole()`
+#### `setRole()`
 
 `public static function setRole(int $userId, string $role)`
 
 Assigns the specified `$role` to the user specified by `$userId`. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `getRoles()`
+#### `getRoles()`
 
 `public static function getRoles(?int $userId = null) : array`
 
 Gets the array of roles assigned to the user specified by `$userId` or the current user if not passed. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `getCapabilities()`
+#### `getCapabilities()`
 
 `public static function getCapabilities(?int $userId = null) : array`
 
 Gets the array of capabilities assigned to the user specified by `$userId` or the current user if not passed. It relies on the `WP_User` object from `User::get()` behind the scenes.
 
-### `getMeta()`
+#### `getMeta()`
 
 `public static function getMeta(?string $key = null, $default = null, ?int $userId = null)`
 
 Gets user meta data for the user specified by `$userId` or the current user if not passed. It relies on the `WP_User` object from `User::get()` behind the scenes. If the meta data doesn't exist, it'll return `$default`.
 
-### `getAllMeta()`
+#### `getAllMeta()`
 
 `public static function getAllMeta(int $userId) : array`
 
 Gets the array of all meta data for the user specified by `$userId`. (Wrapper for `get_user_meta()`.)
 
-### `setMeta()`
+#### `setMeta()`
 
 `public static function setMeta(string $key, $value, ?int $userId = null)`
 
 Sets user meta data for the user specified by `$userId` or the current user if not passed.
 
-### `deleteMeta()`
+#### `deleteMeta()`
 
 `public static function deleteMeta(string $key, ?int $userId = null)`
 
 Deletes user meta data for the user specified by `$userId` or the current user if not passed.
 
-### `getUserIds()`
+#### `getUserIds()`
 
 `public static function getUserIds(array $args = []) : array`
 
 Returns a list of all user IDs in the system that match the `$args`, or all users in the system if not passed. (Relies on WP function `get_users()` to handle the `$args`.
 
-### `redirectIfNotLoggedIn()`
+#### `redirectIfNotLoggedIn()`
 
 `public static function redirectIfNotLoggedIn()`
 
 If the current user isn't logged in, then call `auth_redirect()`.
 
-### `getUserOption()`
+#### `getUserOption()`
 
 `public static function getUserOption(string $key, $default = null, ?int $userId = null)`
 
 This will get the value for the `$key` (namespaced behind the scenes) for the given `$userId` (or the current user if not passed). It will return `$default` if the value isn't found through `get_option()`.
 
-### `setUserOption()`
+#### `setUserOption()`
 
 `public static function setUserOption(string $key, $data, ?int $userId = null)`
 
 This will set the value for the `$key` (namespaced behind the scenes) for the given `$userId` (or the current user if not passed).
 
-### `loginAs()`
+#### `loginAs()`
 
 `public static function loginAs(int $userId)`
 
 This will permanantly log the current user in as another user (`$userId`) until the user running `loginAs()` logs out.
 
-### `register()`
+#### `register()`
 
 `public static function register(string $username, string $password, string $email) : int|WP_Error`
 
 Register a new user user through `wp_create_user()`. The `$password` is sent to this method unencrypted.
 
-`Dragon\Support\Util`
------------------------------------
+### `Dragon\Support\Util`
 
-### `namespaced()`
+#### `namespaced()`
 
 `public static function namespaced(string $key) : string`
 
 Returns the namespaced version of `$key`.
 
-### `unnamespaced()`
+#### `unnamespaced()`
 
 `public static function unnamespaced(string $key) : string`
 
 Pass the namespaced `$key` in, and it will return the original unnamespaced key.
 
-### `onlyDigits()`
+#### `onlyDigits()`
 
 `public static function onlyDigits(string $text) : string`
 
 Returns only the digits contained in `$text`, in the order in which the digits appear in `$text`, using the PHP function `ctype_digit()`.
 
-### `isEmail()`
+#### `isEmail()`
 
 `public static function isEmail(string $email) : bool`
 
 Checks if `$email` contains a valid email address according to WordPress' rules, and then with PHP's `filter_var($email, FILTER_VALIDATE_EMAIL)`.
 
-### `phoneFormat()`
+#### `phoneFormat()`
 
 `public static function phoneFormat(?string $phoneNumber, string $region = 'US', int $format = PhoneNumberFormat::E164) : ?string`
 
@@ -576,7 +549,7 @@ Uses Google's `libphonenumber` library to parse the phone number into the desire
 !!! warning
     This might throw a `\libphonenumber\NumberParseException`.
 
-### `nth()`
+#### `nth()`
 
 `public static function nth(float $number) : ?string`
 
@@ -585,7 +558,7 @@ Pass in a `$number` such as 1, and get back the ordinal value. (Ex. `first`)
 !!! note
     This accepts a `float` due to a [bug in the ICU code](https://github.com/php/php-src/issues/17006) that PHP relies on.
 
-### `moneyFormat()`
+#### `moneyFormat()`
 
 `public static function moneyFormat(?float $number, string $currency = "USD") : ?string`
 
@@ -593,101 +566,99 @@ Pass in a `$number` and optionally a three-character (ISO 4217) `$currency` code
 
 ## Form Fields
 
-`abstract class Dragon\Http\Form\Field`
------------------------------------
+### `abstract class Dragon\Http\Form\Field`
 
 All form fields in Dragon Framework rely on this abstract class. You're welcome to extend it as well. All setter methods return the field so you can keep chaining them together as needed.
 
-### `make()`
+#### `make()`
 
 `public static function make(string $name) : static`
 
 Creates a new instance of the field and sets the HTML `name` to `$name`, then returns the instance for chaining.
 
-### `attributes()`
+#### `attributes()`
 
 `public function attributes(array $attributes) : static`
 
 Sets the array of HTML attributes as a key-pair as meta data. (Ex. `['id' => 'my-field']`)
 
-### `label()`
+#### `label()`
 
 `public function label(string $label) : static`
 
 Sets the label text meta data associated with the field.
 
-### `value()`
+#### `value()`
 
 `public function value(?string $value) : static`
 
 Sets the HTML `value` attribute meta data to `$value`.
 
-### `required()`
+#### `required()`
 
 `public function required(bool $isRequired = true) : static`
 
 Sets the field meta data to mark the field as required or optional.
 
-### `required()`
+#### `required()`
 
 `public function required(bool $isRequired = true) : static`
 
 Sets the field meta data to mark the field as required or optional.
 
-### `encrypted()`
+#### `encrypted()`
 
 `public function encrypted(bool $isEncrypted = true) : static`
 
 Sets the field meta data to mark the field as encrypted or plain text.
 
-### `getName()`
+#### `getName()`
 
 `public function getName() : string`
 
 Gets the name set while using `make()`.
 
-### `getValue()`
+#### `getValue()`
 
 `public function getValue() : ?string`
 
 Gets the value set by `value()`. If the field is marked `encrypted()` then it will try and decrypt it using `app('encrypter')->decrypt()`.
 
-### `getLabel()`
+#### `getLabel()`
 
 `public function getLabel() : ?string`
 
 Gets the label meta data associated with the field.
 
-### `getAttributes()`
+#### `getAttributes()`
 
 `public function getAttributes() : array`
 
 Gets the HTML attributes array meta data associated with the field.
 
-### `isRequired()`
+#### `isRequired()`
 
 `public function isRequired() : bool`
 
 Gets the boolean value set through `required()`.
 
-### `isEncrypted()`
+#### `isEncrypted()`
 
 `public function isEncrypted() : bool`
 
 Gets the boolean value set through `encrypted()`.
 
-### `render()`
+#### `render()`
 
 `public function render() : string`
 
 This is an `abstract` method that must be implemented by each subclass. When called, it will turn the object into the respective HTML code for the object.
 
-`Dragon\Http\Form\Select`
------------------------------------
+### `Dragon\Http\Form\Select`
 
 The `Select` class extends `Dragon\Http\Form\Field`, and [all of its methods](#abstract-class-dragonhttpformfield) are available for use.
 
-### `options()`
+#### `options()`
 
 `public function options(array $options) : static`
 
@@ -696,23 +667,21 @@ Sets the list of `option` items for the select box. The `$options` array is a ke
 !!! note
     To set the selected option, use `value()`.
 
-`Dragon\Http\Form\Textarea`
------------------------------------
+### `Dragon\Http\Form\Textarea`
 
 The `Textarea` class extends `Dragon\Http\Form\Field`, and [all of its methods](#abstract-class-dragonhttpformfield) are available for use.
 
-`Dragon\Http\Form\Textbox`
------------------------------------
+### `Dragon\Http\Form\Textbox`
 
 The `Textbox` class extends `Dragon\Http\Form\Field`, and [all of its methods](#abstract-class-dragonhttpformfield) are available for use.
 
-### `type()`
+#### `type()`
 
 `public function type(string $type) : static`
 
 Sets the type if input box. `$type` could be `hidden`, `number`, `text` (default), `date`, `email`, or whatever else you might find useful.
 
-### `getType()`
+#### `getType()`
 
 `public function getType() : string`
 
