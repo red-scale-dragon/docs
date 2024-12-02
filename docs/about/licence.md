@@ -1,6 +1,6 @@
 # MIT License
 
-Why did we choose to release the Dragon Framework under the MIT License? We believe in having as legally free starting point as possible for your project. This fosters increased adoption, and it also allows our own projects that use the Dragon Framework to be more viable for building projects for our clients. The MIT license allows us to protect ourselves from any bugs and other issues you may come accross, while not preventinting the use of our code in your own projects. Found a bug? See our "[Contributing](/about/contributing)" section for more details on how you can help fix it.
+Why did we choose to release the Dragon Framework under the MIT License? We believe in having as legally free starting point as possible for your project. This fosters increased adoption, and it also allows our own projects that use the Dragon Framework to be more viable for building projects for our clients. The MIT license allows us to protect ourselves from any bugs and other issues you may come accross, while not preventinting the use of our code in your own projects. Found a bug? See our "[Contributing](contributing)" section for more details on how you can help fix it.
 
 ## Leagal Text
 

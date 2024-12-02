@@ -15,10 +15,12 @@ Here are the main places to contribute.
 Guidelines are items not set in stone, but should be followed when possible. Certain things, such as making sure your code functions, are not guidelines. Your code must pass all its unit tests to be included in our codebase so it doen't break things for other people.
 
 **Guidelines**
+
   - KISS - When writing your code, you should keep it as simple as possible. Try to write as little code to make your code as efficient as possible.
   - YAGNI - You Aren't Gonna Need It! Don't write things that no one will use. This is a framework, and that's why this is a guideline, so if you're writing a utility method not used by any code in the codebase, but provides value to people using the framework, that's cool. However, if you write a private method that's not used by anything, or it has one line of code and it's used in one place, that's an example of something that needs refactoring.
 
-** Rules**
+**Rules**
+
   - Your code must work. Write your unit tests in PHPUnit and make sure it passes.
   - Keep to the same structure and code formatting as you see in front of you. (Ex. Directory structure, casing, etc.)
   - SOLID - Follow [Robert C. Martin's](https://en.wikipedia.org/wiki/Robert_C._Martin) Clean Code Principles.
@@ -31,8 +33,10 @@ Guidelines are items not set in stone, but should be followed when possible. Cer
 ## Guidelines and Rules for Documentors
 
 **Guidelines**
+
   - Follow proper grammar. If you're a non-native speaker of the language you're writing in, then just do the best you can and someone will polish it up for you. However, this does take an extra effort to rewrite things, so the more you can do on your own, the better. (Ex. ask ChatGPT to proofreed your text)
 
-** Rules**
+**Rules**
+
   - We follow the [Diataxis](https://diataxis.fr/) principles for our documentation. This helps keep things clean. For instance, the text on this page is considered an "Explaination", not a "How To" or the like like. Please read the documentation from Diataxis and make sure your documentation matches the format.
   - ReadTheDocs will parse our documentation using `mkdocs`, and therefore, all documentation must pass the compiler to become part of the documentation on our website. This is just simple Markdown in a specific directory structure. That'll create the menues and provide quality documentation. Please review both the [ReadTheDocs](https://docs.readthedocs.io/) and [MkDocs](https://www.mkdocs.org/) documentation to make sure your documentation will pass.

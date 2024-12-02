@@ -16,7 +16,8 @@ The first thing you'll want to do is choose your menu text, slug, icon, and othe
 By default, your admin settings page is installed as a top level menu. So, lets unpack what we can use for our top level menu display.
 
 **Properties for all menus**
-- `$pageTitle` - This is the title for your page, not your menu. If you choose to use that on your page view, the parent controller (`Dragon\Http\Controllers\AdminPageController`) will give you access to it as `{{ $title }} if you get your page data through `$this->makePageData()` on your controller.
+
+- `$pageTitle` - This is the title for your page, not your menu. If you choose to use that on your page view, the parent controller (`Dragon\Http\Controllers\AdminPageController`) will give you access to it as `{{ $title }}` if you get your page data through `$this->makePageData()` on your controller.
 - `$menuText` - This is the text that will display for your menu item in the sidebar. Be sure to choose an appropriate name.
 - `$capability` - Select a capability that should be allowed to access your menu item. (Ex. `manage_options` or `read`) You usually can select a role here as well if you'd prefer, but that limits things to that role only.
 - `$routeName` - Dragon Framework virtualizes routes so you can use them as admin pages. You'll need to configure your route in `routes/web.php`. Be sure to check out the examples in there already. Set the name (`name()` in the `routes/web.php` file) of the route here.

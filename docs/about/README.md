@@ -4,7 +4,7 @@
 
 Dragon Framework exists to make it extremely easy to write WordPress plugins using Laravel components. (Psst... Are you building a theme? You'll want to use Acorn instead.)
 
-Under the hood, the Dragon Framework uses [Acorn](https://roots.io/acorn/docs/) to do the heavy lifting of integrating WordPress with Laravel, but the Dragon Framework takes it to the next level. This means, that you're free to use both Laravel Packages, as well as [Acorn Packages](ttps://roots.io/acorn/docs/available-packages/#user-contributed), in addition to other WordPress plugins.
+Under the hood, the Dragon Framework uses [Acorn](https://roots.io/acorn/docs/) to do the heavy lifting of integrating WordPress with Laravel, but the Dragon Framework takes it to the next level. This means, that you're free to use both Laravel Packages, as well as [Acorn Packages](https://roots.io/acorn/docs/available-packages/#user-contributed), in addition to other WordPress plugins.
 
 You also have access to the Acorn command line tool by running `wp acorn` which acts similarly to Laravel's `artisan` command, but adds Acorn-specific commands.
 
@@ -12,7 +12,7 @@ You also have access to the Acorn command line tool by running `wp acorn` which 
 
 The Dragon Framework isn't just Acorn, but a collection of tools to improve on WP code, and offers skeleton code to fast track getting started with the Dragon Framework.
 
-Acorn is designed for theme development first, and there are a LOT of things that get quite complicated when trying to use it for plugin development. While Acorn does provide immense value in plugin development, Acorn's goal is to provide a theme-first framework, so things like [making shortcodes](walkthroughs/create-a-shortcode) that run on routes aren't at all easy without the Dragon Framework. Instead routes just run your code on a blank page without WordPress styling when you write WP plugins with Acorn. You need Dragon Framework to virtualize routes for display through shortcodes, blocks, or admin pages.
+Acorn is designed for theme development first, and there are a LOT of things that get quite complicated when trying to use it for plugin development. While Acorn does provide immense value in plugin development, Acorn's goal is to provide a theme-first framework, so things like [making shortcodes](../walkthroughs/create-a-shortcode) that run on routes aren't at all easy without the Dragon Framework. Instead routes just run your code on a blank page without WordPress styling when you write WP plugins with Acorn. You need Dragon Framework to virtualize routes for display through shortcodes, blocks, or admin pages.
 
 If you're looking for a theme-first toolkit, we highly recommend using Acorn directly, not the Dragon Framework which is created for WordPress plugin development. Acorn is built by Roots, and they have a whole ecosystem of awesome theme-first tools, such as their own starter theme called Sage.
 

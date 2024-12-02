@@ -14,7 +14,7 @@ Possible values: Any controller class name that extends `Dragon\Http\Controllers
 List your top level admin menu controllers in this array.
 
 !!! note
-    Configuration for page-specific JS/CSS assets, icons, menu name, and more are found in your controller. Be sure to check out the section on [how to configure an admin menu page](../how-to-articles/configuring-admin-menus).
+    Configuration for page-specific JS/CSS assets, icons, menu name, and more are found in your controller. Be sure to check out the section on [how to configure an admin menu page](../../how-to-articles/configuring-admin-menus).
 
 The `submenu` Array
 --------------------
@@ -49,15 +49,15 @@ Possible values: List of all service providers
 This this of providers contains service providers contains all base service providers from Laravel and Acorn, but also includes the following list of Dragon Framework service providers.
 
 - `AppServiceProvider` - Stub provider for your own application code
-- `BladeDirectiveServiceProvider` - Provides blade directives and custom Blade if statements ([Which ones?](blade-directives))
-- `ShortcodeServiceProvider` - Loads all the shortcodes you have registered in [`config('shortcodes.controllers')`](#shortcodes-php)
-- `TaxonomyServiceProvider` - Loads all the custom taxonomies you have listed in [`config('taxonomies.tax')`](#taxonomies-php)
+- `BladeDirectiveServiceProvider` - Provides blade directives and custom Blade if statements ([Which ones?](../blade-directives))
+- `ShortcodeServiceProvider` - Loads all the shortcodes you have registered in [`config('shortcodes.controllers')`](#shortcodesphp)
+- `TaxonomyServiceProvider` - Loads all the custom taxonomies you have listed in [`config('taxonomies.tax')`](#taxonomiesphp)
 - `PostTypeServiceProvider` - Loads all the custom post types you have listed in [`config('post_types.post_types')`](#the-post_types-array)
-- `AssetsServiceProvider` - Loads JS and CSS assets you have configured globally for the admin area, front end, or both, as outlined in [`config('assets)`](#assets-php)
+- `AssetsServiceProvider` - Loads JS and CSS assets you have configured globally for the admin area, front end, or both, as outlined in [`config('assets)`](#assetsphp)
 - `FormRequestServiceProvider` - Currently a Laravel-specific service provider
-- `RoleServiceProvider` - Adds all the roles you have configured in [`config('roles.roles')`](#roles-php)
+- `RoleServiceProvider` - Adds all the roles you have configured in [`config('roles.roles')`](#rolesphp)
 - `AjaxServiceProvider` - Loads all the Ajax hooks you've configured in [`config('hooks.ajax')`](#the-ajax-array)
-- `CronServiceProvider` - Loads the cron job data configured in [`config('cron')`](#cron-php)
+- `CronServiceProvider` - Loads the cron job data configured in [`config('cron')`](#cronphp)
 
 ## assets.php
 
@@ -68,21 +68,21 @@ The `admin` Array
 
 Possible values: An array with `js` and `css` keys set to [appropriate values](#values-for-js-and-css)
 
-These JS and CSS files are loaded for the entire admin area. ([How do I add page-specific assets?](../how-to-articles/configuring-admin-menus#page-specific-assets))
+These JS and CSS files are loaded for the entire admin area. ([How do I add page-specific assets?](../../how-to-articles/configuring-admin-menus#page-specific-assets))
 
 The `frontend` Array
 ------------------
 
 Possible values: An array with `js` and `css` keys set to [appropriate values](#values-for-js-and-css), and `enable_ajax` set to `true` or `false`
 
-These JS and CSS files are loaded for the front end of your website. ([How do I add page-specific assets?](../how-to-articles/configuring-admin-menus#page-specific-assets)) If `enable_ajax` is set to true, the `admin_url` variable will be available on the front end for ajax requests.
+These JS and CSS files are loaded for the front end of your website. ([How do I add page-specific assets?](../../how-to-articles/configuring-admin-menus#page-specific-assets)) If `enable_ajax` is set to true, the `admin_url` variable will be available on the front end for ajax requests.
 
 The `global` Array
 ------------------
 
 Possible values: An array with `js` and `css` keys set to [appropriate values](#values-for-js-and-css)
 
-These JS and CSS files are loaded for the entire admin area and the entire front end of your website. ([How do I add page-specific assets?](../how-to-articles/configuring-admin-menus#page-specific-assets))
+These JS and CSS files are loaded for the entire admin area and the entire front end of your website. ([How do I add page-specific assets?](../../how-to-articles/configuring-admin-menus#page-specific-assets))
 
 Values for `js` and `css`
 --------------------------
