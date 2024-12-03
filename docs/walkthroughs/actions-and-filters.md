@@ -45,4 +45,4 @@ Now lets hook it up in `config/hooks.php`. We can add it to the `global` array f
 	],
 ```
 
-Easy peasy. Want to learn more about the [configuration file settings for hooks](../../api-reference/config-files)?
+Easy peasy. Want to learn more about the [configuration file settings for hooks](../../api-reference/config-files#hooksphp)?

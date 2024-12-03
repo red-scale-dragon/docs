@@ -41,6 +41,7 @@ mkdocs==1.6.1
     # via
     #   -r docs/requirements.in
     #   mkdocs-autorefs
+    #   mkdocs-open-in-new-tab
     #   mkdocstrings
 mkdocs-autorefs==1.2.0
     # via
@@ -48,6 +49,8 @@ mkdocs-autorefs==1.2.0
     #   mkdocstrings-python
 mkdocs-get-deps==0.2.0
     # via mkdocs
+mkdocs-open-in-new-tab==1.0.8
+    # via -r docs/requirements.in
 mkdocstrings[python]==0.27.0
     # via
     #   -r docs/requirements.in
