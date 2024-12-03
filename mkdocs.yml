@@ -1,5 +1,6 @@
 site_name: Dragon Framework Docs
 repo_url: https://github.com/red-scale-dragon/docs/
+edit_uri: blob/main/docs/
 theme:
   name: readthedocs
   highlightjs: true
