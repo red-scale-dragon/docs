@@ -6,8 +6,7 @@ There are a number of configuration settings and files that Dragon Framework add
 
 The Dragon Framework configuration file for creating admin menus. This is read by `Dragon\Hooks\AdminPluginHooks::buildAdminMenu()`, and executes automatically during boot up.
 
-The `menu` Array
------------------
+### The `menu` Array
 
 Possible values: Any controller class name that extends `Dragon\Http\Controllers\AdminPageController`
 
@@ -16,15 +15,13 @@ List your top level admin menu controllers in this array.
 !!! note
     Configuration for page-specific JS/CSS assets, icons, menu name, and more are found in your controller. Be sure to check out the section on [how to configure an admin menu page](../../how-to-articles/configuring-admin-menus).
 
-The `submenu` Array
---------------------
+### The `submenu` Array
 
 Possible values: Any controller class name that extends `Dragon\Http\Controllers\AdminPageController`
 
 List your submenu controllers in this array. They still extend the same controller, but they are configured differently. See the note above on where to find the documentation on configuring them.
 
-The `hidden_menu` Array
-------------------------
+### The `hidden_menu` Array
 
 Possible values: Any controller class name that extends `Dragon\Http\Controllers\AdminPageController`
 
@@ -34,15 +31,13 @@ Hidden menus are submenus that don't appear in the sidebar links. These are grea
 
 The following are new options added to the app.php configuration file.
 
-The `namespace` String
------------------------
+### The `namespace` String
 
 Possible values: Any string you'd like to use as a namespace prefix
 
 Options in the DB, shortcodes, and many more things use namespaces to keep your code from affecting other plugins installed on the same site. Set this to a unique string and behind the scenes Dragon Framework will add and remove the namespace for you so you can work with any key names you'd like.
 
-The `providers` array
------------------------
+### The `providers` array
 
 Possible values: List of all service providers
 
@@ -63,29 +58,25 @@ This this of providers contains service providers contains all base service prov
 
 The following are new options added to the assets.php configuration file.
 
-The `admin` Array
-------------------
+### The `admin` Array
 
 Possible values: An array with `js` and `css` keys set to [appropriate values](#values-for-js-and-css)
 
 These JS and CSS files are loaded for the entire admin area. ([How do I add page-specific assets?](../../how-to-articles/configuring-admin-menus#page-specific-assets))
 
-The `frontend` Array
-------------------
+### The `frontend` Array
 
 Possible values: An array with `js` and `css` keys set to [appropriate values](#values-for-js-and-css), and `enable_ajax` set to `true` or `false`
 
 These JS and CSS files are loaded for the front end of your website. ([How do I add page-specific assets?](../../how-to-articles/configuring-admin-menus#page-specific-assets)) If `enable_ajax` is set to true, the `admin_url` variable will be available on the front end for ajax requests.
 
-The `global` Array
-------------------
+### The `global` Array
 
 Possible values: An array with `js` and `css` keys set to [appropriate values](#values-for-js-and-css)
 
 These JS and CSS files are loaded for the entire admin area and the entire front end of your website. ([How do I add page-specific assets?](../../how-to-articles/configuring-admin-menus#page-specific-assets))
 
-Values for `js` and `css`
---------------------------
+### Values for `js` and `css`
 
 Possible values: A tag name set to an array as shown in the example below
 
@@ -122,8 +113,7 @@ Example config:
 
 This file is where you configure your cron job options and schedules.
 
-The `schedules` Array
-------------------
+### The `schedules` Array
 
 Possible values: Set the name of the schedule to an array containing `interval` in seconds between runs, and `display` for the name to appear in WordPress when viewing the list of cron jobs.
 
@@ -147,8 +137,7 @@ Example config:
 	],
 ```
 
-The `actions` Array
-------------------
+### The `actions` Array
 
 Possible values: Set the name of cron job to an array containing a `callback` and `schedule` identifier
 
@@ -169,8 +158,7 @@ Example config:
 
 There are new options in this default database configuration file.
 
-The `migrations` String
-------------------
+### The `migrations` String
 
 Possible values: Name the table that you'd like to create to create
 
@@ -180,8 +168,7 @@ The default value changed to `dragonfw_migrations` to aid in compatability with 
 
 Error configuration file new in the Dragon Framework.
 
-The `ignore_messages` Array
-------------------
+### The `ignore_messages` Array
 
 Possible values: Any error messages you wish to ignore in testing
 
@@ -193,29 +180,25 @@ Filtering takes place in the exception handler extended by `App\Exceptions\Handl
 
 Dragon Framework configuration file for WordPress actions, filters, and ajax hooks.
 
-The `admin` Array
-------------------
+### The `admin` Array
 
 Possible values: An array containing `actions` and `filters` arrays with [valid values](#values-for-actions-and-filters)
 
 This is where you configure all WordPress actions and filters you wish to use in the admin area. `Dragon\Hooks\AdminPluginHooks::init()` adds these hooks at startup. You do not need to call it manually.
 
-The `frontend` Array
-------------------
+### The `frontend` Array
 
 Possible values: An array containing `actions` and `filters` arrays with [valid values](#values-for-actions-and-filters)
 
 This is where you configure all WordPress actions and filters you wish to use on the front end of your website. `Dragon\Hooks\FrontendPluginHooks::init()` adds these hooks at startup. You do not need to call it manually.
 
-The `global` Array
-------------------
+### The `global` Array
 
 Possible values: An array containing `actions` and `filters` arrays with [valid values](#values-for-actions-and-filters)
 
 If you wish to run the same actions and hooks on both the admin area as well as the front end, you can configure them one globally here. `Dragon\Hooks\PluginHooksAbstract::init()` adds these hooks at startup. You do not need to call it manually.
 
-Values for `actions` and `filters`
-------------------------------------
+### Values for `actions` and `filters`
 
 The previous three sections say to use "valid values" for `actions` and `filter`. Both hold arrays where the key name is the name of the hook, and it holds an array of the following items. (Thus allowing you to add multiple callbacks per hook.)
 
@@ -242,8 +225,7 @@ Example config:
 		],
 ```
 
-The `ajax` Array
-------------------
+### The `ajax` Array
 
 Possible values: An array containing a hook name assigned to an array of callbacks
 
@@ -269,8 +251,7 @@ Example config:
 
 Dragon Framework configuration file for WordPress custom post types.
 
-The `post_types` Array
-------------------
+### The `post_types` Array
 
 Possible values: An array containing class names for those classes that extend `Dragon\Posts\PostType`
 
@@ -280,8 +261,7 @@ Set the class names for each custom post type you wish to register.
 
 Dragon Framework configuration file for WordPress roles.
 
-The `roles` Array
-------------------
+### The `roles` Array
 
 Possible values: An array where key names are the names of the roles, and the value is an array as outlined below
 
@@ -315,8 +295,7 @@ Example config:
 
 Dragon Framework configuration file for WordPress shortcodes.
 
-The `controllers` Array
--------------------------
+### The `controllers` Array
 
 Possible values: An array of class names that extend `Dragon\Http\Controllers\ShortcodeController`
 
@@ -326,8 +305,7 @@ Dragon Framework virtualizes routes specified in `routes/web.php` to be used as 
 
 Dragon Framework configuration file for WordPress custom taxonomies.
 
-The `tax` Array
--------------------------
+### The `tax` Array
 
 Possible values: An array of class names that extend `Dragon\Posts\Taxonomy`
 
