@@ -612,6 +612,18 @@ Sets the field meta data to mark the field as required or optional.
 
 Sets the field meta data to mark the field as encrypted or plain text.
 
+#### `readOnly()`
+
+`public function readOnly(bool $isReadOnly = true) : static`
+
+Sets the field meta data to mark the field as read only.
+
+#### `isReadOnly()`
+
+`public function isReadOnly() : bool`
+
+Gets the boolean value set through `readOnly()`.
+
 #### `getName()`
 
 `public function getName() : string`
@@ -651,6 +663,12 @@ Gets the boolean value set through `encrypted()`.
 #### `render()`
 
 `public function render() : string`
+
+This will check if the field is read only or not. If it's in read only mode, it will return the result of `$this->getValue()`. If it's not in read only mode, it will call the `$this->toHtml()` method.
+
+#### `toHtml()`
+
+`abstract protected function toHtml() : string`
 
 This is an `abstract` method that must be implemented by each subclass. When called, it will turn the object into the respective HTML code for the object.
 

@@ -96,13 +96,17 @@ class DragonDataTable extends Table {
 		'created_at'	=> 'Creation Date',
 	];
 	
+	protected function deleteRow(int $id) {
+		DragonTest::where('id', $id)->delete();
+	}
+	
 	protected function getRows() {
 		return DragonTest::orderBy('created_at', 'DESC')->get();
 	}
 }
 ```
 
-Notice that `getRows()` is using a model to gather the data? That's the model we created in the last step.
+Notice that `getRows()` and `deleteRow()` use a model to work with the data? That's the model we created in the last step.
 
 We'll wait until after the next step to add it to the admin menu so we can do it at the same time.
 
@@ -130,6 +134,7 @@ class DragonDataDetails extends Details {
 	protected static string $routeName = "admin-dragon-details";
 	protected static string $slug = "admin-dragon-details";
 	protected static string $parentSlug = "admin-dragons";
+	protected static bool $readOnly = false;
 	
 	protected string $modelName = DragonTest::class;
 	
@@ -144,16 +149,17 @@ class DragonDataDetails extends Details {
 	protected function getFields(Request $request) {
 		return [
 			Textbox::make('name')
-				->value($this->getValue($request->query->get('id'), 'name'))
+				->value($this->getValue($request->get('id'), 'name'))
 				->label('What\'s the dragon\'s name?')
 				->required(),
 			Textbox::make('color')
-				->value($this->getValue($request->query->get('id'), 'color'))
+				->value($this->getValue($request->get('id'), 'color'))
 				->label('What color is the dragon?')
 				->required(),
 		];
 	}
 }
+
 ```
 
 Now we have everything ready to add it to the admin menu. Open `/config/admin_menu.php` and add the following data. (For simplicity, we've left the SettingsController in place as the top level menu, but you could reconfigure your Table to be the top level menu if you'd rather it that way.
