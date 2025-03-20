@@ -4,7 +4,7 @@ If you don't test your plugin thoroughly, you're only guessing that it works. Th
 
 ## Setting Up
 
-All of your tests run on PHPunit. The base test case extends the `\WP_UnitTestCase` so you have access to both WordPress testing commands, as well as PHPUnit commands. However, due to PHP not having the concept of multiple inheritance, unfortunately that means we are unable to extend the Laravel base test case. Laravel and WordPress do not extend each other's test case either. So, since we're targeting WordPress by building a plugin for it, it makes more sense for the Dragon Framework to extend the WordPress test case instead of the one from Laravel. This means things like `$this->get('/')` will not work in your tests.
+All of your tests run on PHPUnit. The base test case extends the `\WP_UnitTestCase` so you have access to both WordPress testing commands, as well as PHPUnit commands. However, due to PHP not having the concept of multiple inheritance, unfortunately that means we are unable to extend the Laravel base test case. Laravel and WordPress do not extend each other's test case either. So, since we're targeting WordPress by building a plugin for it, it makes more sense for the Dragon Framework to extend the WordPress test case instead of the one from Laravel. This means things like `$this->get('/')` will not work in your tests.
 
 Bootstrapping is done on the `tests/bootstrap.php` file, and the `/phpunit.xml` file already tells PHPUnit to load that file for you. So, if you need some special treatment for your tests, you could add to the bootstrap file, but typically that's not necessary.
 

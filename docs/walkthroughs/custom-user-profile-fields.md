@@ -89,4 +89,4 @@ Now we need to hook up the plumbing and get it running. Open `/config/hooks.php`
 		],
 ```
 
-Now visit your own profile (or someone elses) on WP admin. Scroll to the bottom to see your new options.
+Now visit your own profile (or someone else's) on WP admin. Scroll to the bottom to see your new options.

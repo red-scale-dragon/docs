@@ -2,7 +2,7 @@
 
 You've created a list of items in the database, namely dragon names and colors, but you need to create a page to edit those. Not only that, but you want to see all the data in the db, page the data, search and filter it, and... well, you get the picture. Pretty complicated, isn't it?
 
-Dragon Framework comes with controllers and views to handle the heavy lifting for you. The table page relies on [dataTables](https://datatables.net/) to handle the tabler operations, and Dragon Framework takes care of the details page portion.
+Dragon Framework comes with controllers and views to handle the heavy lifting for you. The table page relies on [dataTables](https://datatables.net/) to handle the table operations, and Dragon Framework takes care of the details page portion.
 
 Let's start setting things up. Shall we?
 

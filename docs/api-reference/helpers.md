@@ -202,7 +202,7 @@ This will queue a notice of type `$type` which displays `$message` to the admin 
 
 `public static function dir(string $extra = "") : ?string`
 
-This will return the html-ready directory for an item in `resources/assets` when `$extra` contains a valid filename or path. If `$extra` is empty, then it will return the path to `resources/assets`. First the method will look for the file in your `app/resources/assets` directory, and if it doesn't exist, it will look for it in the Dragon Framework directory.
+This will return the HTML-ready directory for an item in `resources/assets` when `$extra` contains a valid filename or path. If `$extra` is empty, then it will return the path to `resources/assets`. First the method will look for the file in your `app/resources/assets` directory, and if it doesn't exist, it will look for it in the Dragon Framework directory.
 
 ### `Dragon\Core\Config`
 
@@ -306,7 +306,7 @@ If you pass a CSV filename to the constructor, it'll parse the file for you and 
 
 `public function isCsv() : bool`
 
-Checks the mime type of the filename passed to the contructor if you chose to pass it. If it's one of the known CSV mime types, then it'll return `true`, otherwise `false`.
+Checks the mime type of the filename passed to the constructor if you chose to pass it. If it's one of the known CSV mime types, then it'll return `true`, otherwise `false`.
 
 #### `download()`
 
@@ -320,7 +320,7 @@ Push the CSV file to the browser using the filename `$filename` as the default f
 
 `public static function getMediaImageUrlById(int $id, $size = "thumbnail") : ?string`
 
-Returns the URL to the media gallary image for the specified attachment `$id`, and WordPress-defined `$size`.
+Returns the URL to the media gallery image for the specified attachment `$id`, and WordPress-defined `$size`.
 
 #### `getPathForMediaImageById()`
 
@@ -506,7 +506,7 @@ This will set the value for the `$key` (namespaced behind the scenes) for the gi
 
 `public static function loginAs(int $userId)`
 
-This will permanantly log the current user in as another user (`$userId`) until the user running `loginAs()` logs out.
+This will permanently log the current user in as another user (`$userId`) until the user running `loginAs()` logs out.
 
 #### `register()`
 
@@ -562,7 +562,7 @@ Pass in a `$number` such as 1, and get back the ordinal value. (Ex. `first`)
 
 `public static function moneyFormat(?float $number, string $currency = "USD") : ?string`
 
-Pass in a `$number` and optionally a three-character (ISO 4217) `$currency` code, and recieve the resulting text to display the money to the user. (Ex. $1.00, CA$1.00, RUB 1.00, etc.)
+Pass in a `$number` and optionally a three-character (ISO 4217) `$currency` code, and receive the resulting text to display the money to the user. (Ex. $1.00, CA$1.00, RUB 1.00, etc.)
 
 ## Form Fields
 

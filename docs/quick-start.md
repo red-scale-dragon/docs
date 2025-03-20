@@ -15,6 +15,10 @@ To get started with Dragon Framework, you have two options. The first option is 
     - If you prefer not to have the sample code, you'll want to instead run `git clone git@github.com:red-scale-dragon/app-blank.git dragonapp`.
     - Both of those commands will create a new plugin inside of the `dragonapp` directory. If you prefer to name your plugin something else, you'll want to change the directory name before proceeding to the next step.
 - Change the directory to the `dragonapp` directory you just created, and run `composer update` to install all the necessary dependencies.
+- From the same directory, run `mv .env.example .env` and then edit the resulting `.env` file to have your application's name. Activate the plugin in WordPress to allow you to run the `wp acorn key:generate` command, which will populate the `APP_KEY` variable in `.env` for you. Please note that the `wp` command will not find your plugin if you do not first activate your new plugin in WordPress before you use it.
+
+!!! important
+	If you plan to install two apps next to each other and you use the same version of Dragon Framework, you'll wind up with two identical composer autoloader names, thus not allowing you to activate the second plugin. To avoid this issue, it's best to set the `autoloader-suffix` in [composer.json](https://getcomposer.org/doc/06-config.md#autoloader-suffix) to be something other than an empty string. The composer project [reccomends](https://github.com/composer/composer/blob/71e8395ebdb68d9179fae53e7fa3a303d6e438f3/src/Composer/Autoload/AutoloadGenerator.php#L429) using the output of `bin2hex(random_bytes(16))` for your custom suffix. Once you chaange your suffix, be sure to run `composer upgrade` once more. Please note that you'll also need to decide on a sandboxing strategy, such as Strauss, PHP Scoper, or another way to sandbox your application. This is very involved, and unless there is significant interest in having this built into Dragon Dramework, it won't get added. If we made the framework install as its own plugin, then plugins for different versions of the framework would need backwards compatibility. So, there really isn't an easy solution to this short of PHP making autoloading able to be sandboxed, or WordPress having unified dependencies...
 
 Congratulation! You now have a plugin ready for you to use. Of course your plugin doesn't do what you want until you build it out, but it is valid plugin code running on the Dragon Framework. Now, let's explore the codebase a bit.
 
@@ -44,7 +48,7 @@ While you could place most of the files in any structure here that you'd like, i
 - `Exceptions` - This must contain `Handler.php` which is your exceptions handler. It's a stub that extends the Dragon Framework's base exception. You're free to change it as you need, but the Dragon Framework does depend on this file being where it is.
 - `Http/Ajax` - Your Ajax callbacks should appear in this directory.
 - `Http/Controllers` - Any controllers should be here. `Admin`, `Api`, and `Shortcode` are good names for directories to organize the different parts of your codebase into different directories.
-- `Http/Middleware` - Store your middlewhere here and reference it on your routes.
+- `Http/Middleware` - Store your middleware here and reference it on your routes.
 - `Http/Requests` - If you want to validate forms and the like, you can do that by extending the base `FormRequest` class. Feel free to organize this into subdirectories, then just type hint them on your controllers.
 - `Models` - Store all of your database models for Eloquent Orm here. This way you can easily work with the tables you created in your migrations.
 - `PostTypes` - If you've created custom post types, this directory is a great place to put them. Reference those in the `config/post_types.php` file for post types.

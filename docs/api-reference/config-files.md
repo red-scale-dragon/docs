@@ -1,6 +1,6 @@
 # Config Files
 
-There are a number of configuration settings and files that Dragon Framework adds to your app directory. Below is an outline of their settings with pages in alphabetal order, and options listed in the order in which they appear in the config file.
+There are a number of configuration settings and files that Dragon Framework adds to your app directory. Below is an outline of their settings with pages in alphabetical order, and options listed in the order in which they appear in the config file.
 
 ## admin_menu.php
 
@@ -80,7 +80,7 @@ These JS and CSS files are loaded for the entire admin area and the entire front
 
 Possible values: A tag name set to an array as shown in the example below
 
-The preceeding three keys for `admin`, `frontend`, and `global` all mention needing "appropriate values" for `js` and `css`. `js` and `css` are both arrays with their keys set to the tag name of the asset. (Ex. `my-table-script` or the like. Choose what you'd like.) The arrays set to those tags include:
+The preceding three keys for `admin`, `frontend`, and `global` all mention needing "appropriate values" for `js` and `css`. `js` and `css` are both arrays with their keys set to the tag name of the asset. (Ex. `my-table-script` or the like. Choose what you'd like.) The arrays set to those tags include:
 
 **`css`**
 - `style` - Set to the URL or filename (in resources/assets/css) that you wish to load
@@ -162,7 +162,7 @@ There are new options in this default database configuration file.
 
 Possible values: Name the table that you'd like to create to create
 
-The default value changed to `dragonfw_migrations` to aid in compatability with other plugins that might use the Acorn default of `migrations`.
+The default value changed to `dragonfw_migrations` to aid in compatibility with other plugins that might use the Acorn default of `migrations`.
 
 ## errors.php
 
@@ -229,9 +229,9 @@ Example config:
 
 Possible values: An array containing a hook name assigned to an array of callbacks
 
-This is where you set your callbacks for ajax requests. They're registered through the service provider, and will load automatically for you. The folowing items may be set in the configuration for each callback configuration.
+This is where you set your callbacks for ajax requests. They're registered through the service provider, and will load automatically for you. The following items may be set in the configuration for each callback configuration.
 
-- `frontend` (Optional - default: false) - If set to `true`, the service provider will register a `wp_ajax_nopriv_xxx` hook callback, so non-privilidged users (logged out) can use the endpoint.
+- `frontend` (Optional - default: false) - If set to `true`, the service provider will register a `wp_ajax_nopriv_xxx` hook callback, so non-privileged users (logged out) can use the endpoint.
 - `callback` (Required) - Set this to a callable that will run on ajax requests for your endpoint.
 
 Example config:

@@ -1,6 +1,7 @@
 # Configuring Admin Menus
 
 To configure admin menus, you'll need to create a controller that extends `Dragon\Http\Controllers\AdminPageController`, and add it to your `config/admin_menu.php` configuration file. Once that's done, follow the information on this page to properly configure your controller to do what you'd like.
+
 ## Menu Data
 
 The first thing you'll want to do is choose your menu text, slug, icon, and other specificities. Take a look at these properties copied from the admin `SettingsController`.
@@ -62,7 +63,7 @@ protected static array $scripts = [];
 protected static array $styles = [];
 ```
 
-As you probably guessed, `$scripts` holds your JS code, and `$styles` holds your CSS code. The following example shows the correct stucture for these two properties.
+As you probably guessed, `$scripts` holds your JS code, and `$styles` holds your CSS code. The following example shows the correct structure for these two properties.
 
 ```
     protected static array $scripts = [

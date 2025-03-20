@@ -18,9 +18,9 @@ If you're looking for a theme-first toolkit, we highly recommend using Acorn dir
 
 ## Why not just use Laravel components directly?
 
-Dragon Framework 1.x did in fact use Laravel components directly. For many years it provided an easy to work with system of tools using Laravel. It was missing controllers, routes, and a slew of other features available in 2.x. Hundreds of our client projects ran on Dragon Framework 1.x. That saved countless hours of development time, and saved our clients thousands of dollars. 2.x is a full rewite of the Dragon Framework, and carries over a few tools from 1.x.
+Dragon Framework 1.x did in fact use Laravel components directly. For many years it provided an easy to work with system of tools using Laravel. It was missing controllers, routes, and a slew of other features available in 2.x. Hundreds of our client projects ran on Dragon Framework 1.x. That saved countless hours of development time, and saved our clients thousands of dollars. 2.x is a full rewrite of the Dragon Framework, and carries over a few tools from 1.x.
 
-Laravel is a complex system of components that are very difficult to seperate. It's not like Symfony which Laravel relies on for many of it's features, such as `Request` and `Cookie` management. There are ways to [use Laravel components on their own](https://github.com/mattstauffer/Torch/tree/master), though.
+Laravel is a complex system of components that are very difficult to separate. It's not like Symfony which Laravel relies on for many of it's features, such as `Request` and `Cookie` management. There are ways to [use Laravel components on their own](https://github.com/mattstauffer/Torch/tree/master), though.
 
 ## Why not just use Symfony?
 
@@ -28,11 +28,11 @@ Laravel adds a LOT of tooling on top of Symfony's building blocks. Yes, Symfony 
 
 ## Why not just use PHP?
 
-PHP is a programming language written in C and C++. It provides a fine grained approch to build... well, anything! You can even package up your code inside of a single file that can be run on the command line, or even run scripts from the command line. You'll however, find yourself spending countless hours building things like security, template engines, a database ORM, and other things that work out of the box in a modern framework.
+PHP is a programming language written in C and C++. It provides a fine grained approach to build... well, anything! You can even package up your code inside of a single file that can be run on the command line, or even run scripts from the command line. You'll however, find yourself spending countless hours building things like security, template engines, a database ORM, and other things that work out of the box in a modern framework.
 
 ## If PHP relies on C and C++, why not use those?
 
-C++ got its name from being "one more than C". C++ is built in C, and it's a C framework. PHP takes C and C++ and adds an entire web toolkit to these general purpose programming languages. While you can compile PHP, it's meant as a scripting language. C and C++ are compiled into Assembler code, and then into binary. C can run on embedded devices, but C++ needs an SDK to run, and usually doesn't work so well with embeded devices. PHP usually isn't found on embeded devices for that reason either. C++ just makes C object oriented.
+C++ got its name from being "one more than C". C++ is built in C, and it's a C framework. PHP takes C and C++ and adds an entire web toolkit to these general purpose programming languages. While you can compile PHP, it's meant as a scripting language. C and C++ are compiled into Assembler code, and then into binary. C can run on embedded devices, but C++ needs an SDK to run, and usually doesn't work so well with embedded devices. PHP usually isn't found on embedded devices for that reason either. C++ just makes C object oriented.
 
 ## If C++ and C compile to Assembler, why not use Assembler?
 
